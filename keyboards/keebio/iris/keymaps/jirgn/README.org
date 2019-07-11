@@ -1,0 +1,32 @@
+* Jirgns Iris Layout
+This is a custom layout for my iris keyboard from [[https://keeb.io/][Keeb.io]]
+
+** The Layout
+The Layout was designed with [[http://www.keyboard-layout-editor.com/#/][an Keyboard Layout Editor]] and can be shown [[http://www.keyboard-layout-editor.com/##@_name=Iris%20macmap%3B&@_x:3&c=%23c4c8c5&a:7%3B&=3&_x:8%3B&=8%3B&@_y:-0.87&x:2%3B&=2&_x:1%3B&=4&_x:6%3B&=7&_x:1%3B&=9%3B&@_y:-0.88&x:5%3B&=5&_x:4%3B&=6%3B&@_y:-0.87%3B&=%60&=1&_x:12%3B&=0&=-%3B&@_y:-0.38&x:3%3B&=E&_x:8%3B&=I%3B&@_y:-0.8700000000000001&x:2%3B&=W&_x:1%3B&=R&_x:6%3B&=U&_x:1%3B&=O%3B&@_y:-0.8799999999999999&x:5%3B&=T&_x:4%3B&=Y%3B&@_y:-0.8700000000000001%3B&=Tab&=Q&_x:12%3B&=P&=%2F=%3B&@_y:-0.3799999999999999&x:3%3B&=D&_x:8%3B&=K%3B&@_y:-0.8700000000000001&x:2%3B&=S&_x:1%3B&=F&_x:6%3B&=J&_x:1%3B&=L%3B&@_y:-0.8799999999999999&x:5%3B&=G&_x:4%3B&=H%3B&@_y:-0.8700000000000001%3B&=%3Ci%20class%2F='mss%20mss-Unicode-Escape-3'%3E%3C%2F%2Fi%3E%0A%0A%0A%0ACtrl&_c=%2361ba5d%3B&=A%0A%0A%0A%0ANav&_x:12%3B&=%2F%3B%0A%0A%0A%0ANav&_c=%23c4c8c5%3B&=%5C%3B&@_y:-0.3799999999999999&x:3%3B&=C&_x:8%3B&=,%3B&@_y:-0.8700000000000001&x:2%3B&=X&_x:1%3B&=V&_x:6%3B&=M&_x:1%3B&=.%3B&@_y:-0.8799999999999999&x:5%3B&=B&_x:4%3B&=N%3B&@_y:-0.8700000000000001&c=%23b8b8b8%3B&=Shift&_c=%23c4c8c5%3B&=Z&_x:12%3B&=%2F%2F&_c=%23b8b8b8%3B&=%3Ci%20class%2F='kb%20kb-Return-2'%3E%3C%2F%2Fi%3E%0A%0A%0A%0AShift%3B&@_y:-0.13999999999999968&x:3.5%3B&=%3Ci%20class%2F='mss%20mss-Unicode-Option-3'%3E%3C%2F%2Fi%3E%3B&@_y:-0.9900000000000002&x:11.5%3B&=%3Ci%20class%2F='mss%20mss-Unicode-Option-3'%3E%3C%2F%2Fi%3E%3B&@_y:-0.8899999999999997&x:4.5%3B&=%3Ci%20class%2F='mss%20mss-Unicode-Command-3'%3E%3C%2F%2Fi%3E&_x:5%3B&=%3Ci%20class%2F='mss%20mss-Unicode-Command-3'%3E%3C%2F%2Fi%3E%3B&@_r:30&rx:8&y:3.88&x:0.5%3B&=%3Ci%20class%2F='mss%20mss-Unicode-BackSpace-DeleteLeft-Big-2'%3E%3C%2F%2Fi%3E%3B&@_y:0.020000000000000462&x:0.5&c=%23fa7a5f%3B&=%0A%0A%0A%0A%2F&dArr%2F%3B%3B&@_r:-30&y:-2.0200000000000005&x:-1.5&c=%23b8b8b8%3B&=Hyper%3B&@_y:0.020000000000000462&x:-1.5&c=%237ab7f7%3B&=%3Ci%20class%2F='kb%20kb-Return-2'%3E%3C%2F%2Fi%3E%0A%0A%0A%0A%2F&uArr%2F][here.]]
+One of the Main Differences is the Navigation Layer that has a VIM style hjkl layout.
+
+** Install
+- ensure you have installed the flash utilities. This can be done with [[https://brew.sh/][Homebrew]]. More Infos on [[https://docs.qmk.fm/#/getting_started_build_tools?id=macos][QMK Docs]].
+#+BEGIN_SRC sh
+  brew tap osx-cross/avr
+  brew tap PX4/homebrew-px4
+  brew update
+  brew install avr-gcc@8
+  brew link --force avr-gcc@8
+  brew install dfu-programmer
+  brew install dfu-util
+  brew install gcc-arm-none-eabi
+  brew install avrdude
+#+END_SRC
+- install the [[https://github.com/qmk/qmk_firmware][QMK Firmware Framework]]
+- place your firmware into //keyboards/keebio/iris/keymaps/yourname/
+- test build the firmware with the following command make keebio/iris/{rev_of_board}:{yourname}
+#+BEGIN_SRC sh
+  make keebio/iris/rev2:jirgn
+#+END_SRC
+- if successfull flash the firmware onto to the board.
+  - connect the master side with usb cable
+  - make with avrdude flash routine
+#+BEGIN_SRC sh
+  make keebio/iris/rev2:jirgn:avrdude
+#+END_SRC
