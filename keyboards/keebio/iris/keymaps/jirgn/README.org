@@ -28,5 +28,5 @@ One of the Main Differences is the Navigation Layer that has a VIM style hjkl la
   - connect the master side with usb cable
   - make with avrdude flash routine
 #+BEGIN_SRC sh
-  make keebio/iris/rev2:jirgn:avrdude
+  make keebio/iris/rev2:jirgn:flash
 #+END_SRC
